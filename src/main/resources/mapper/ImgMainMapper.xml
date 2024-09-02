@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.whai.blog.mapper.ImgMainMapper">
+
+    <delete id="deleteImgAcc" parameterType="string">
+        delete from img_main where img_id=#{imgId}
+    </delete>
+    <update id="cancelDelete" parameterType="string">
+        update img_main set img_delete=0 where img_id=#{imgId}
+    </update>
+    <select id="selectImgWithCondition" resultType="com.whai.blog.model.ImgMain">
+        select * from img_main ${ew.customSqlSegment}
+    </select>
+</mapper>

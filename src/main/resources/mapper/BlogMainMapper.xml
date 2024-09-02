@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.whai.blog.mapper.BlogMainMapper">
+
+    <update id="likeBlog">
+        UPDATE blog_main set blog_like=blog_like+#{likeNumber} WHERE blog_id=#{blogId}
+    </update>
+    <update id="cancelDelete" parameterType="string">
+        UPDATE blog_main set blog_delete='0' WHERE blog_id=#{blogId}
+    </update>
+
+
+    <select id="findBlogByTagId" parameterType="integer"  resultType="com.whai.blog.model.BlogMain">
+        SELECT * from blog_main b
+                          join blog_main_tag bt
+                               on b.blog_id=bt.blog_main_id
+                          join tag t
+                               on t.tag_id=bt.blog_tag_id
+         ${ew.customSqlSegment}
+    </select>
+    <select id="pageCustomSelectBlog" parameterType="string" resultType="com.whai.blog.model.BlogMain">
+        SELECT * from blog_main
+            ${ew.customSqlSegment}
+    </select>
+    <select id="getABlogCustom" resultType="com.whai.blog.model.BlogMain">
+        SELECT * from blog_main
+        ${ew.customSqlSegment}
+    </select>
+    <select id="searchByKeyWord" resultType="com.whai.blog.model.BlogMain" parameterType="string" >
+        select * from blog_main b where
+                                      b.blog_content like CONCAT('%', #{keyWord}, '%')
+                                     or b.blog_content like CONCAT('%', #{keyWord}, '%')
+                                     or b.blog_title like CONCAT('%', #{keyWord}, '%')
+    </select>
+
+    <select id="getBlogPages" resultType="com.whai.blog.model.BlogMain">
+        select blog_main.blog_title from blog_main
+    </select>
+</mapper>

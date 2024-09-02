@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.whai.blog.mapper.FileMainMapper">
+    <delete id="deleteFileAcc" parameterType="string">
+        delete from file_main where file_id=#{fileId}
+    </delete>
+    <update id="deleteCancel" parameterType="string">
+        update file_main set file_delete='0' where file_id=#{fileId}
+    </update>
+
+    <select id="selectFileWithCondition" resultType="com.whai.blog.model.FileMain">
+        select * from file_main ${ew.customSqlSegment}
+    </select>
+</mapper>

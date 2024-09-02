@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.whai.blog.mapper.BlogCommentMapper">
+
+    <sql id="commentContent">
+        blog_comment_id,blog_comment_session,blog_comment_ip,blog_comment_blog_id,blog_comment_time,blog_comment_location,blog_comment_content
+    </sql>
+
+    <select id="queryBlogComment" resultType="com.whai.blog.model.BlogComment" parameterType="string">
+        SELECT
+        <include refid="commentContent"/>
+        FROM
+                      blog_comment as a
+          left JOIN
+                      blog_main as  b
+            on b.blog_id=a.blog_comment_blog_id
+        WHERE blog_id = #{blogId}
+    </select>
+
+    <update id="likeComment" parameterType="string">
+        UPDATE blog_comment set blog_comment_like=blog_comment_like+1 WHERE blog_comment_id=#{commentId}
+    </update>
+
+</mapper>
