@@ -12,7 +12,7 @@ whai:
 whaiblog:
   version: 1.0
   name: whai的博客系统
-  url: whaifree.top
+  url: whai.space
   email: whaifree@163.com
 
 hdfs:

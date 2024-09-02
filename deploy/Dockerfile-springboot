@@ -1,0 +1,21 @@
+FROM adoptopenjdk/openjdk8
+# VOLUME 定义匿名数据卷。在启动容器时忘记挂载数据卷，会自动挂载到匿名卷。
+VOLUME /tmp
+# ADD 复制文件并重命名 类似于COPY
+COPY ./Springboot/blog-0.0.1-SNAPSHOT.jar /blog-0.0.1.jar
+COPY ./Springboot/img /img
+COPY ./Springboot/logs /logs
+COPY ./Springboot/file /file
+# 运行Spring Boot应用程序
+CMD ["java", "-jar", "/blog-0.0.1.jar" ]
+
+
+#FROM maven:3.8.2-jdk-8
+# VOLUME 定义匿名数据卷。在启动容器时忘记挂载数据卷，会自动挂载到匿名卷。
+#VOLUME /tmp
+## ADD 复制文件并重命名 类似于COPY
+#COPY ./SpringBoot/DockerDeployDemo-0.0.1-SNAPSHOT.jar /DockerDeployDemo.jar
+##COPY . .
+## EXPOSE 12138
+## 运行Spring Boot应用程序
+#CMD mvn spring-boot:run

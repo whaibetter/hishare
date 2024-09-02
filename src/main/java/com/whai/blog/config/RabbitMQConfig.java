@@ -36,7 +36,7 @@ public class RabbitMQConfig {
 
 
     /**
-     * <img src="http://img.whaifree.top//msedge_dtTchXXwao.png" style="zoom:80%;" /> <br/>
+     * <img src="http://img.whai.space//msedge_dtTchXXwao.png" style="zoom:80%;" /> <br/>
      * @return
      */
     @Bean
@@ -77,7 +77,7 @@ public class RabbitMQConfig {
 
     /**
      * 下面为进行 同步Blog
-     * <img src="http://img.whaifree.top//msedge_0cLdRp7Krt.png" alt="msedge_0cLdRp7Krt" style="zoom:80%;" />
+     * <img src="http://img.whai.space//msedge_0cLdRp7Krt.png" alt="msedge_0cLdRp7Krt" style="zoom:80%;" />
      * @return
      */
     @Bean
@@ -111,7 +111,7 @@ public class RabbitMQConfig {
 
 
     /**
-     * <img src="http://img.whaifree.top//msedge_XcLJxYjQXc.png" alt="msedge_XcLJxYjQXc" style="zoom:80%;" />
+     * <img src="http://img.whai.space//msedge_XcLJxYjQXc.png" alt="msedge_XcLJxYjQXc" style="zoom:80%;" />
      * 下面为进行 同步Message的 likeMessage
      * @return
      */

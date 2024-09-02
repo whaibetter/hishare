@@ -83,7 +83,7 @@ public class BlogCommentServiceImpl extends ServiceImpl<BlogCommentMapper, BlogC
 
 
     /**
-     * <img src="http://img.whaifree.top//msedge_dtTchXXwao.png" style="zoom:80%;" /> <br/>
+     * <img src="http://img.whai.space//msedge_dtTchXXwao.png" style="zoom:80%;" /> <br/>
      * 监听RabbitMQ 评论队列
      * @param msg
      */
